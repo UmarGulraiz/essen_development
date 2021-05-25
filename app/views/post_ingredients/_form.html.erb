@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :post_id %>
-    <%= form.text_field :post_id %>
+    <%= form.collection_select :post_id, Post.order(:name), :id, :name %>
   </div>
 
   <div class="field">
     <%= form.label :ingredient_id %>
-    <%= form.text_field :ingredient_id %>
+    <%= form.collection_select :ingredient_id, Ingredient.order(:ingredient), :id, :ingredient %>
   </div>
 
   <div class="field">
@@ -28,32 +28,32 @@
 
   <div class="field">
     <%= form.label :measure %>
-    <%= form.number_field :measure %>
+    <%= form.select :measure, PostIngredient.measures.keys, {:include_blank => true} %>
   </div>
 
   <div class="field">
     <%= form.label :ingr_replica1_id %>
-    <%= form.text_field :ingr_replica1_id %>
+    <%= form.collection_select :ingr_replica1_id, Ingredient.order(:ingredient), :id, :ingredient, {:include_blank => true} %>
   </div>
 
   <div class="field">
     <%= form.label :ingr_replica2_id %>
-    <%= form.text_field :ingr_replica2_id %>
+    <%= form.collection_select :ingr_replica2_id, Ingredient.order(:ingredient), :id, :ingredient, {:include_blank => true} %>
   </div>
 
   <div class="field">
     <%= form.label :ingr_replica3_id %>
-    <%= form.text_field :ingr_replica3_id %>
+    <%= form.collection_select :ingr_replica3_id, Ingredient.order(:ingredient), :id, :ingredient, {:include_blank => true} %>
   </div>
 
   <div class="field">
     <%= form.label :ingr_replica4_id %>
-    <%= form.text_field :ingr_replica4_id %>
+    <%= form.collection_select :ingr_replica4_id, Ingredient.order(:ingredient), :id, :ingredient, {:include_blank => true} %>
   </div>
 
   <div class="field">
     <%= form.label :ingr_replica5_id %>
-    <%= form.text_field :ingr_replica5_id %>
+    <%= form.collection_select :ingr_replica5_id, Ingredient.order(:ingredient), :id, :ingredient, {:include_blank => true} %>
   </div>
 
   <div class="actions">
