@@ -9,4 +9,6 @@ class User < ApplicationRecord
   # user.role = 1 присвоим роль
   # user.role => 'author' выведем роль
   enum role: [:standard, :author, :admin]
+
+  has_many :posts
 end
