@@ -12,6 +12,9 @@
       <th>Time</th>
       <th>Category</th>
       <th>User</th>
+
+      <th>Ingredients</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -24,8 +27,13 @@
         <td><%= post.content %></td>
         <td><%= post.image %></td>
         <td><%= post.time %></td>
-        <td><%= post.category_id %></td>
+        <td><%= post.category.name %></td>
         <td><%= post.user_id %></td>
+
+        <td><%= post.post_ingredients.joins(:ingredient).
+                  pluck(:ingredient, :amount, :measure, :ingr_replica1_id, :ingr_replica2_id, :ingr_replica3_id, :ingr_replica4_id, :ingr_replica5_id).
+                  map{ |pi| "#{pi[0]}, #{pi[1]} #{pi[2]}." }.join(' / ') %></td>
+
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
