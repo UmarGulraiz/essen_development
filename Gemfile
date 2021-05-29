@@ -29,8 +29,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise', '~> 4.2'
-
 gem 'carrierwave', '~> 2.0'
+gem 'simple_form'
 
 
 group :development, :test do
