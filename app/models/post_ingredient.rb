@@ -3,9 +3,9 @@ class PostIngredient < ApplicationRecord
 
   belongs_to :post
   belongs_to :ingredient
-  # belongs_to :ingr_replica1, optional: true
-  # belongs_to :ingr_replica2, optional: true
-  # belongs_to :ingr_replica3, optional: true
-  # belongs_to :ingr_replica4, optional: true
-  # belongs_to :ingr_replica5, optional: true
+  belongs_to :ingr_replica1, class_name: "Ingredient", optional: true
+  belongs_to :ingr_replica2, class_name: "Ingredient", optional: true
+  belongs_to :ingr_replica3, class_name: "Ingredient", optional: true
+  belongs_to :ingr_replica4, class_name: "Ingredient", optional: true
+  belongs_to :ingr_replica5, class_name: "Ingredient", optional: true
 end
