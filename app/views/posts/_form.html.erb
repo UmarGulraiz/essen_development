@@ -38,12 +38,12 @@
 
   <div class="field">
     <%= form.label :category_id %>
-    <%= form.text_field :category_id %>
+    <%= form.collection_select :category_id, Category.order(:name), :id, :name, {:include_blank => true} %>
   </div>
 
   <div class="field">
     <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+    <%= form.collection_select :user_id, User.order(:email), :id, :email %>
   </div>
 
   <div class="actions">
