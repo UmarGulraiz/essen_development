@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
-    @post = @post.post_ingredients.build
+    # @post = @post.post_ingredients.build
   end
 
   # GET /posts/1/edit

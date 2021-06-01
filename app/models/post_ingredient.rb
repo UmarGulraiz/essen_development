@@ -3,9 +3,13 @@ class PostIngredient < ApplicationRecord
 
   belongs_to :post
   belongs_to :ingredient
+  has_many :ingredient_changes
+  
   belongs_to :ingr_replica1, class_name: "Ingredient", optional: true
   belongs_to :ingr_replica2, class_name: "Ingredient", optional: true
   belongs_to :ingr_replica3, class_name: "Ingredient", optional: true
   belongs_to :ingr_replica4, class_name: "Ingredient", optional: true
   belongs_to :ingr_replica5, class_name: "Ingredient", optional: true
+
+  scope :for_one_post, ->(post) { where('post_id = ?', post.id) }
 end
