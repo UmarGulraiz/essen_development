@@ -32,7 +32,7 @@
 
         <td><%= post.post_ingredients.joins(:ingredient).
                   pluck(:ingredient, :amount, :measure, :ingr_replica1_id, :ingr_replica2_id, :ingr_replica3_id, :ingr_replica4_id, :ingr_replica5_id).
-                  map{ |pi| "#{pi[0]}, #{pi[1]} #{pi[2]}." }.join(' / ') %></td>
+                  map{ |pi| "#{pi[0]}, #{pi[1]} #{pi[2]}. (" }.join(' / ') %></td>
 
         <td><%= link_to 'Show', [:admin, post] %></td>
         <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>

@@ -16,6 +16,11 @@
 </p>
 
 <p>
+  <strong>Ingredients:</strong>
+  <%= render 'ingredients', post: @post %>
+</p>
+
+<p>
   <strong>Image:</strong>
   <%= @post.image %>
 </p>
@@ -27,12 +32,12 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @post.category_id %>
+  <%= @post.category.name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @post.user_id %>
+  <%= @post.user.email %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |

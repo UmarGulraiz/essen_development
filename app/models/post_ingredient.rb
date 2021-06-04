@@ -3,7 +3,6 @@ class PostIngredient < ApplicationRecord
 
   belongs_to :post
   belongs_to :ingredient
-  has_many :ingredient_changes
   
   belongs_to :ingr_replica1, class_name: "Ingredient", optional: true
   belongs_to :ingr_replica2, class_name: "Ingredient", optional: true

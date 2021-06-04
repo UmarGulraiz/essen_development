@@ -25,11 +25,11 @@
         <td><%= post_ingredient.ingredient.ingredient %></td>
         <td><%= post_ingredient.amount %></td>
         <td><%= post_ingredient.measure %></td>
-        <td><%= post_ingredient.ingr_replica1 %></td>
-        <td><%= post_ingredient.ingr_replica2_id %></td>
-        <td><%= post_ingredient.ingr_replica3_id %></td>
-        <td><%= post_ingredient.ingr_replica4_id %></td>
-        <td><%= post_ingredient.ingr_replica5_id %></td>
+        <td><%= post_ingredient.ingr_replica1&.ingredient %></td>
+        <td><%= post_ingredient.ingr_replica2&.ingredient %></td>
+        <td><%= post_ingredient.ingr_replica3&.ingredient %></td>
+        <td><%= post_ingredient.ingr_replica4&.ingredient %></td>
+        <td><%= post_ingredient.ingr_replica5&.ingredient %></td>
         <td><%= link_to 'Show', post_ingredient %></td>
         <td><%= link_to 'Edit', edit_post_ingredient_path(post_ingredient) %></td>
         <td><%= link_to 'Destroy', post_ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
