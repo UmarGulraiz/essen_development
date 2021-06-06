@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @post.name %>
 </p>
@@ -18,11 +22,6 @@
 <p>
   <strong>Ingredients:</strong>
   <%= render 'ingredients', post: @post %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @post.image %>
 </p>
 
 <p>
