@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_24_191935) do
+ActiveRecord::Schema.define(version: 2021_06_06_114814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2021_05_24_191935) do
     t.string "ingredient"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "main_id"
+    t.index ["main_id"], name: "index_ingredients_on_main_id"
   end
 
   create_table "post_ingredients", force: :cascade do |t|
@@ -75,6 +77,7 @@ ActiveRecord::Schema.define(version: 2021_05_24_191935) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "ingredients", "ingredients", column: "main_id"
   add_foreign_key "post_ingredients", "ingredients"
   add_foreign_key "post_ingredients", "ingredients", column: "ingr_replica1_id"
   add_foreign_key "post_ingredients", "ingredients", column: "ingr_replica2_id"

@@ -16,6 +16,11 @@
     <%= form.text_field :ingredient %>
   </div>
 
+  <div class="field">
+    <%= form.label 'Замена ингредиента' %>
+    <%= collection_check_boxes(:ingredient, :replacement_ids, Ingredient.all, :id, :ingredient, include_hidden: false) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

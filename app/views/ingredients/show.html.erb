@@ -2,8 +2,14 @@
 
 <p>
   <strong>Ingredient:</strong>
-  <%= @ingredient.ingredient %>
+  <%= @ingredient.ingredient %> 
 </p>
+
+<p>
+  <strong>Замена для данного ингредиента</strong>
+  <%= render "replacements", ingredient: @ingredient %>
+</p>
+
 
 <%= link_to 'Edit', edit_ingredient_path(@ingredient) %> |
 <%= link_to 'Back', ingredients_path %>
