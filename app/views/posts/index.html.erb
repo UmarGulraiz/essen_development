@@ -29,7 +29,7 @@
         <td><%= post.time %></td>
         <td><%= post.category.name %></td>
         <td><%= post.user_id %></td>
-        <td><%= render 'ingredients', post: post %><br><%= link_to 'Добавить ингредиенты', new_post_ingredient_path %></td>
+        <td><%= render 'ingredients', post: post %><br><%= link_to 'Добавить ингредиенты', post_post_ingredients_path(post) %></td>
 
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
@@ -43,6 +43,5 @@
 
 <%= link_to 'New Post', new_post_path %>
 <%= link_to 'Ingredients', ingredients_path %>
-<%= link_to 'Ингредиенты рецепта', post_ingredients_path %>
 <%= link_to 'New User', new_user_registration_path %>
 
