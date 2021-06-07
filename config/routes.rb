@@ -3,15 +3,16 @@ Rails.application.routes.draw do
   root 'posts#index'
 
   resources :posts #, only: [:show, :index]
-  resources :ingredients
+  resources :ingredients, only: :index
   resources :categories, only: :index
   resources :users, except: [:new, :create]
 
   namespace :admin do
     resources :categories
-    resources :posts
     resources :ingredients
     resources :users
+    resources :posts
+    resources :post_ingredients
   end
 
   resources :posts do
