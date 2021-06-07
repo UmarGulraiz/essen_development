@@ -1,5 +1,6 @@
 class IngredientsController < ApplicationController
   before_action :set_ingredient, only: %i[ show edit update destroy ]
+  after_action :verify_authorized, only: %i[ new create edit update destroy ]
 
   # GET /ingredients or /ingredients.json
   def index
@@ -13,15 +14,18 @@ class IngredientsController < ApplicationController
   # GET /ingredients/new
   def new
     @ingredient = Ingredient.new
+    authorize @ingredient
   end
 
   # GET /ingredients/1/edit
   def edit
+    authorize @ingredient
   end
 
   # POST /ingredients or /ingredients.json
   def create
     @ingredient = Ingredient.new(ingredient_params)
+    authorize @ingredient
 
     respond_to do |format|
       if @ingredient.save
@@ -36,6 +40,8 @@ class IngredientsController < ApplicationController
 
   # PATCH/PUT /ingredients/1 or /ingredients/1.json
   def update
+    authorize @ingredient
+    
     respond_to do |format|
       if @ingredient.update(ingredient_params)
         format.html { redirect_to @ingredient, notice: "Ingredient was successfully updated." }
@@ -49,6 +55,8 @@ class IngredientsController < ApplicationController
 
   # DELETE /ingredients/1 or /ingredients/1.json
   def destroy
+    authorize @ingredient
+
     @ingredient.destroy
     respond_to do |format|
       format.html { redirect_to ingredients_url, notice: "Ingredient was successfully destroyed." }
