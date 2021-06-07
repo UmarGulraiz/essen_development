@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :posts #, only: [:show, :index]
   resources :ingredients
-  resources :categories, only: [:show, :index]
+  resources :categories, only: :index
   resources :users, except: [:new, :create]
 
   namespace :admin do
