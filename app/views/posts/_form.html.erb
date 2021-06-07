@@ -46,6 +46,11 @@
     <%= form.collection_select :user_id, User.order(:email), :id, :email %>
   </div>
 
+  <div class="field">
+    <%= form.label 'Добавить ингредиент' %>
+    <%= collection_check_boxes(:post_ingredients, :ingredient_ids, Ingredient.all, :id, :ingredient, include_hidden: false) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
