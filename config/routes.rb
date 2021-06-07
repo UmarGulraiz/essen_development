@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :ingredients
   resources :categories, only: [:show, :index]
   devise_for :users
-  resources :users
+  resources :users, except: [:new, :create]
 
   namespace :admin do
     resources :categories
