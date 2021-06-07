@@ -1,15 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'posts#index'
 
   resources :posts #, only: [:show, :index]
   resources :ingredients
   resources :categories, only: [:show, :index]
-  devise_for :users
   resources :users, except: [:new, :create]
 
   namespace :admin do
     resources :categories
     resources :posts
+    resources :ingredients
+    resources :users
   end
 
   resources :posts do
