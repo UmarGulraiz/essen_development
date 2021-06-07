@@ -29,14 +29,11 @@
         <td><%= post.time %></td>
         <td><%= post.category.name %></td>
         <td><%= post.user_id %></td>
+        <td><%= render 'ingredients', post: post %><br><%= link_to 'Добавить ингредиенты', new_post_post_ingredient_path(post) %></td>
 
-        <td><%= post.post_ingredients.joins(:ingredient).
-                  pluck(:ingredient, :amount, :measure, :ingr_replica1_id, :ingr_replica2_id, :ingr_replica3_id, :ingr_replica4_id, :ingr_replica5_id).
-                  map{ |pi| "#{pi[0]}, #{pi[1]} #{pi[2]}. (" }.join(' / ') %></td>
-
-        <td><%= link_to 'Show', [:admin, post] %></td>
-        <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
-        <td><%= link_to 'Destroy', [:admin, post], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -44,6 +41,7 @@
 
 <br>
 
-<%= link_to 'New Post', new_admin_post_path %>
+<%= link_to 'New Post', new_post_path %>
 <%= link_to 'Ingredients', ingredients_path %>
-<%= link_to 'Ингредиенты рецепта', post_ingredients_path %>
+<%= link_to 'New User', new_user_registration_path %>
+

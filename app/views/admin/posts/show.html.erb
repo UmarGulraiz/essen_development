@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag(@post.image.url, alt: 'Image') if @post.image? %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @post.name %>
 </p>
@@ -16,8 +20,8 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @post.image %>
+  <strong>Ingredients:</strong>
+  <%= render 'ingredients', post: @post %>
 </p>
 
 <p>
@@ -27,13 +31,14 @@
 
 <p>
   <strong>Category:</strong>
-  <%= @post.category_id %>
+  <%= @post.category.name %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @post.user_id %>
+  <%= @post.user.email %>
 </p>
 
-<%= link_to 'Edit', edit_admin_post_path(@post) %> |
-<%= link_to 'Back', admin_posts_path %>
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Add Post Ingredient', post_post_ingredients_path(@post) %> |
+<%= link_to 'Back', posts_path %>
