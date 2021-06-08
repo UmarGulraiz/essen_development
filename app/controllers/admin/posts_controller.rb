@@ -1,5 +1,5 @@
 class Admin::PostsController < Admin::AdminController
-  after_action :verify_authorized, only: %i[ new create edit update destroy ]
+  before_action :set_post, except: [:index, :new, :create]
   
   # GET /posts or /posts.json
   def index
@@ -13,19 +13,16 @@ class Admin::PostsController < Admin::AdminController
   # GET /posts/new
   def new
     @post = Post.new
-    authorize @post
     # @post = @post.post_ingredients.build
   end
 
   # GET /posts/1/edit
   def edit
-    authorize @post
   end
 
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-    authorize @post
 
     respond_to do |format|
       if @post.save
@@ -40,7 +37,6 @@ class Admin::PostsController < Admin::AdminController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
-    authorize @post
 
     respond_to do |format|
       if @post.update(post_params)
@@ -55,7 +51,6 @@ class Admin::PostsController < Admin::AdminController
 
   # DELETE /posts/1 or /posts/1.json
   def destroy
-    authorize @post
 
     @post.destroy
     respond_to do |format|
