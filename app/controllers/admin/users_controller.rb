@@ -1,5 +1,4 @@
-class Admin::UsersController < ApplicationController
-  before_action :authenticate_user!, except: %i[ show index ]
+class Admin::UsersController < Admin::AdminController
   before_action :set_user, only: %i[ show edit update destroy ]
 
   # GET /users or /users.json
@@ -20,7 +19,7 @@ class Admin::UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: "User was successfully updated." }
+        format.html { redirect_to [:admin, @user], notice: "User was successfully updated." }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }

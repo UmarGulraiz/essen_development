@@ -16,9 +16,9 @@
       <tr>
         <td><%= ingredient.ingredient %></td>
         <td><%= render "replacements", ingredient: ingredient %></td>
-        <td><%= link_to 'Show', ingredient %></td>
-        <td><%= link_to 'Edit', edit_ingredient_path(ingredient) %></td>
-        <td><%= link_to 'Destroy', ingredient, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [:admin, ingredient] %></td>
+        <td><%= link_to 'Edit', edit_admin_ingredient_path(ingredient) %></td>
+        <td><%= link_to 'Destroy', [:admin, ingredient], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Ingredient', new_ingredient_path %>
+<%= link_to 'New Ingredient', new_admin_ingredient_path %>

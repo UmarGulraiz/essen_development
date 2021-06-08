@@ -1,4 +1,4 @@
-class Admin::IngredientsController < ApplicationController
+class Admin::IngredientsController < Admin::AdminController
   before_action :set_ingredient, only: %i[ show edit update destroy ]
   after_action :verify_authorized, only: %i[ new create edit update destroy ]
 

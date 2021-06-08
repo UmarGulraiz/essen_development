@@ -28,9 +28,9 @@
         <td><%= post_ingredient.ingr_replica3&.ingredient %></td>
         <td><%= post_ingredient.ingr_replica4&.ingredient %></td>
         <td><%= post_ingredient.ingr_replica5&.ingredient %></td>
-        <td><%= link_to 'Show Post', [@post] %></td>
-        <td><%= link_to 'Edit Post Ingredient', edit_post_post_ingredient_path(@post, post_ingredient) %></td>
-        <td><%= link_to 'Destroy Post Ingredient', [@post, post_ingredient], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show Post', [:admin, @post] %></td>
+        <td><%= link_to 'Edit Post Ingredient', edit_admin_post_post_ingredient_path(@post, post_ingredient) %></td>
+        <td><%= link_to 'Destroy Post Ingredient', [:admin, @post, post_ingredient], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -38,4 +38,4 @@
 
 <br>
 
-<%= link_to 'New Post Ingredient', new_post_post_ingredient_path(@post) %>
+<%= link_to 'New Post Ingredient', new_admin_post_post_ingredient_path(@post) %>

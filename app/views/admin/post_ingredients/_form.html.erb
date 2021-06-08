@@ -1,4 +1,4 @@
-<%= form_with(model: [@post, post_ingredient]) do |form| %>
+<%= form_with(model: [:admin, @post, post_ingredient]) do |form| %>
   <% if post_ingredient.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(post_ingredient.errors.count, "error") %> prohibited this post_ingredient from being saved:</h2>

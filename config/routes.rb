@@ -11,8 +11,9 @@ Rails.application.routes.draw do
     resources :categories
     resources :ingredients
     resources :users
-    resources :posts
-    resources :post_ingredients
+    resources :posts do
+      resources :post_ingredients
+    end
   end
 
   resources :posts do

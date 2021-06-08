@@ -1,4 +1,4 @@
-class Admin::PostIngredientsController < ApplicationController
+class Admin::PostIngredientsController < Admin::AdminController
   before_action :get_post
   before_action :set_post_ingredient, only: %i[ show edit update destroy ]
   after_action :verify_authorized, except: %i[ index show ]
