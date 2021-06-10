@@ -13,11 +13,12 @@ class Admin::PostsController < Admin::AdminController
   # GET /posts/new
   def new
     @post = Post.new
-    # @post = @post.post_ingredients.build
+    # @post.post_ingredients.build
   end
 
   # GET /posts/1/edit
   def edit
+    # @post.post_ingredients.build if @post.post_ingredients.empty?
   end
 
   # POST /posts or /posts.json
@@ -29,6 +30,8 @@ class Admin::PostsController < Admin::AdminController
         format.html { redirect_to @post, notice: "Post was successfully created." }
         format.json { render :show, status: :created, location: @post }
       else
+        # @post.post_ingredients.build if @post.post_ingredients.empty?
+
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
@@ -43,6 +46,8 @@ class Admin::PostsController < Admin::AdminController
         format.html { redirect_to @post, notice: "Post was successfully updated." }
         format.json { render :show, status: :ok, location: @post }
       else
+        # @post.post_ingredients.build if @post.post_ingredients.empty?
+
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
@@ -67,6 +72,8 @@ class Admin::PostsController < Admin::AdminController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:name, :title, :content, :image, :time, :category_id, :user_id, ingredient_ids: [])
+      params.require(:post).permit(:name, :title, :content, :image, :time, :category_id, :user_id, 
+        ingredient_ids: [], 
+        post_ingredients_attributes: [:id, :post_id, :ingredient_id, :amount, :measure, :ingr_replica1_id, :ingr_replica2_id, :ingr_replica3_id, :ingr_replica4_id, :ingr_replica5_id, :_destroy])
     end
 end
