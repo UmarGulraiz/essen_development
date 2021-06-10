@@ -1,8 +1,8 @@
 
 <div>
 <%= link_to '<- Вернуться назад', posts_path, class: 'show__post__btn__back' %>
-<% if user_signed_in? %>
-  <%= link_to 'Редактировать', edit_post_path(@post) , class: 'edit__post__btn__back' %>
+<% if current_user.admin? %>
+  <%= link_to 'Редактировать', edit_admin_post_path(@post) , class: 'edit__post__btn__back' %>
 <% end %>
 </div>
 
