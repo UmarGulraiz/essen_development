@@ -42,4 +42,3 @@ const O_CardRecipe = () => {
 }
 
 export default O_CardRecipe
-
