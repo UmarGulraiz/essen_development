@@ -16,7 +16,7 @@ const Main = () => {
         <O_CardRecipe/>
       </div>
       <Footer/>
-      </>
+    </>
   )
 }
 

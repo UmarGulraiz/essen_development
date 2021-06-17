@@ -1,16 +1,3 @@
-// import React from 'react'
-// const M_TextAndIcon = ({ icon, title}) => {
-//   return (
-//     <div style={{display: "flex"}}>
-//       <img src={icon}></img>
-//       <div class="m-text-title">{title}</div>
-//     </div>
-//   )
-// }
-
-// export default M_TextAndIcon
-
-
 import React from 'react'
 import A_Icon from './A_Icon'
 import A_TextBody from './A_TextBody'
