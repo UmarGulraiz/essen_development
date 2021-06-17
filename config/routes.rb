@@ -21,5 +21,9 @@ Rails.application.routes.draw do
   resources :posts do
     resources :post_ingredients
   end
+
+  get 'homepage', to: 'recipies#index'
+  get 'all_collections', to: 'all_collections#index'
+  get 'author', to: 'author#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
