@@ -1,5 +1,4 @@
 import React from 'react'
-import Plate from 'images/recipe_icons/Plate.svg'
 import A_IconPlus from 'images/recipe_icons/plus_icon.svg'
 import A_IconMinus from 'images/recipe_icons/minus_icon.svg'
 import A_TextCaption from './A_TextCaption'
@@ -19,7 +18,29 @@ const O_Ingredients = () => {
         <div className="recipe-title">
           <A_TextCaption name=" Ингpедиенты"/>
         </div>
-        <M_Ingredients/>
+        <M_Ingredients
+          title_1="Томаты"
+          title_2="— 7 шт"
+        />
+        <M_Ingredients
+          title_1="Базилик"
+          title_2="— 80 г"
+        />
+        <M_Ingredients
+          title_1="Тофу"
+          title_2="— 20 г"
+          showDropdown={true}
+        />
+        <M_Ingredients
+          title_1="Соль"
+          title_2="— по вкусу"
+          showQuestionMark={ true}
+        />
+        <M_Ingredients
+          title_1="Черный перец"
+          title_2="— по вкусу"
+          showQuestionMark={ true}
+        />
       </div>
     </div>
   )

@@ -5,7 +5,7 @@ class A_IconBookmark extends React.Component {
   render (src) {
     return (
       <div>
-        <img src={IconBookmark}/>
+        <img className="bookmark-icon" src={IconBookmark}/>
       </div>
     );
   }

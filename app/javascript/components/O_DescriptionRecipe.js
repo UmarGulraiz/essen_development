@@ -12,6 +12,7 @@ import A_RecipeIcon from 'images/recipe_icons/recipe_1.svg'
 import A_RecipeIconTwo from 'images/recipe_icons/recipe_2.svg'
 import O_Like from './O_Like'
 import O_Footer from './O_Footer'
+import A_IconBookmark from './A_IconBookmark'
 
 
 const O_DescriptionRecipe = () => {
@@ -19,7 +20,12 @@ const O_DescriptionRecipe = () => {
     <>
       <div class="recipe-container">
         <M_Breadcrumbs />
-        <A_TextTitle title="kапpезе с тoфу" />
+        <div style={{display: "flex"}}>
+          <A_TextTitle title="kапpезе с тoфу" />
+          <div style={ {alignSelf: "center"}}>
+            <A_IconBookmark/>
+          </div>
+        </div>
         <M_DescriptionRecipe />
         <A_Photo icon={Plate} />
         <div className= "description-body-recipe">

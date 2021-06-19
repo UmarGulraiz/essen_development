@@ -1,31 +1,19 @@
 import React from 'react'
-import A_ArrowDown from 'images/recipe_icons/icon.png'
+import A_TextBlock from './A_TextBlock'
+import A_Ingredient from './A_Ingredient'
+import A_IconQuestion from 'images/recipe_icons/icon_question.svg'
 
-const M_Ingredients = () => {
+const M_Ingredients = ({title_1, title_2, showDropdown, showQuestionMark }) => {
   return (
     <>
       <div className="ingeredients-list-block">
-        <div className="ingeredient-one">Томаты</div>
-        <div className="ingeredient-two">— 7 шт</div>
-      </div>
-      <div className="ingeredients-list-block">
-        <div className="ingeredient-one">Базилик</div>
-        <div className="ingeredient-two">— 80 г</div>
-      </div>
-      <div className="ingeredients-list-block">
-        <span className="ingeredients-list-arrow">
-          <span className="ingeredient-with-list">Тофу</span>
-          <img src={ A_ArrowDown}/>
-        </span>
-        <div className="ingeredient-two">— 20 г</div>
-      </div>
-      <div className="ingeredients-list-block">
-        <div className="ingeredient-one">Соль</div>
-        <div className="ingeredient-two">— по вкусу</div>
-      </div>
-      <div className="ingeredients-list-block">
-        <div className="ingeredient-one">Черный перец</div>
-        <div className="ingeredient-two">— по вкусу</div>
+        <div className="ingeredient-one">
+          {showDropdown
+            ? <A_Ingredient text={title_1}/>
+            : <A_TextBlock text={title_1} />}
+        </div>
+        <div className="ingeredient-one"><A_TextBlock text={title_2} /></div>
+        {showQuestionMark && <img src={A_IconQuestion} />}
       </div>
     </>
   )
