@@ -4,9 +4,9 @@ import A_TextBody from './A_TextBody'
 
 const M_TextAndIcon = ({ icon, text}) => {
   return (
-    <div className="map-details-container m-icon-and-text">
+    <div className="map-details-container m-icon-and-text m-text-icon-recipe">
       <A_Icon icon={icon} />
-      <div className="map-detail m-text-title">
+      <div className="map-detail m-text-title m-text-title-recipe">
         <A_TextBody text={text}/>
       </div>
     </div>
