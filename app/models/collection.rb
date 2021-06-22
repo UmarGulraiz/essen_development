@@ -1,4 +1,5 @@
 class Collection < ApplicationRecord
   belongs_to :user
-  has_many :recipes
+  has_many :posts
+  mount_uploader :image, ImageUploader
 end

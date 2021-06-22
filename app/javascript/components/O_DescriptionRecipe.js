@@ -15,7 +15,8 @@ import O_Footer from './O_Footer'
 import A_IconBookmark from './A_IconBookmark'
 
 
-const O_DescriptionRecipe = () => {
+const O_DescriptionRecipe = (props) => {
+  console.log("props", props)
   return (
     <>
       <div class="recipe-container">
