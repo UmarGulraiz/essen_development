@@ -4,43 +4,35 @@ import A_IconMinus from 'images/recipe_icons/minus_icon.svg'
 import A_TextCaption from './A_TextCaption'
 import M_Ingredients from './M_Ingredients'
 
-const O_Ingredients = () => {
+const O_Ingredients = ({ recipe }) => {
+
+
+  const ingredientDetails = (ingredientId) =>
+    recipe.post_ingredients.find((x) => x.ingredient_id == ingredientId)
+
   return (
     <div>
       <div className="ingredients-title-block">
         <div className="ingredient-title">Порций</div>
         <div className="signs-block">
           <img src={A_IconMinus} className="icon-minus" />
-          <div className="number-rec">2</div>
+          <div className="number-rec">{recipe.number_of_servings}</div>
           <img src={A_IconPlus} className="icon-plus"/>
         </div>
         <hr style={{ border: "1px solid #E0E2E8" }}></hr>
         <div className="recipe-title">
           <A_TextCaption name=" Ингpедиенты"/>
         </div>
-        <M_Ingredients
-          title_1="Томаты"
-          title_2="— 7 шт"
-        />
-        <M_Ingredients
-          title_1="Базилик"
-          title_2="— 80 г"
-        />
-        <M_Ingredients
-          title_1="Тофу"
-          title_2="— 20 г"
-          showDropdown={true}
-        />
-        <M_Ingredients
-          title_1="Соль"
-          title_2="— по вкусу"
-          showQuestionMark={ true}
-        />
-        <M_Ingredients
-          title_1="Черный перец"
-          title_2="— по вкусу"
-          showQuestionMark={ true}
-        />
+        {console.log(recipe.post_ingredients)}
+        {recipe.ingredients.map((ingredient) => {
+          return (
+            <M_Ingredients
+              key={ingredient.id}
+              title_1={ingredient.ingredient}
+              title_2={`— ${ingredientDetails(ingredient.id).amount} ${ingredientDetails(ingredient.id).measure}`}
+            />
+          )
+        })}
       </div>
     </div>
   )

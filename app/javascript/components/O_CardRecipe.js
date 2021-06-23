@@ -6,31 +6,34 @@ import A_IconDifficulty from 'images/recipe_icons/vector.svg'
 import M_TextAndIcon from './M_TextAndIcon'
 import A_TextBodyCards from './A_TextBodyCards'
 
-const O_CardRecipe = () => {
-  const recipies = [1, 2, 3, 4, 5, 6];
+const O_CardRecipe = (props) => {
+  const { recipes } = props
+
+  const goToRecipe = (recipeId) => window.location.pathname = `/recipes/${recipeId}`
+
   return (
     <>
       {
-        recipies.map((recipe) => {
+        recipes.map((recipe) => {
           return (
-            <div class="main-card-container" style={{position: "relative"}}>
+            <div class="main-card-container" style={{position: "relative"}} onClick={() => goToRecipe(recipe.id)}>
             <div>
-              <img class="recipe-image" src={recipeImage}></img>
+              <img class="recipe-image" src={recipe.image.url}></img>
             </div>
             <div >
               <img class="favoriteIcon" src={A_IconBookmark}></img>
             </div>
-            <A_TextBodyCards name="Равиолли со шпинатом"/>
+              <A_TextBodyCards name={recipe.name}/>
             <div style={{ display: "flex", padding: "16px" }}>
               <div style={{ marginRight: "10px"}}>
                 <M_TextAndIcon
                   icon={A_IconTime}
-                  text="70 мин"
+                  text={recipe.time}
                 />
               </div>
               <M_TextAndIcon
                 icon={A_IconDifficulty}
-                text="Нужно постараться"
+                text={recipe.complexity}
               />
             </div>
           </div >

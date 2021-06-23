@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_19_215444) do
+ActiveRecord::Schema.define(version: 2021_06_23_203512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,9 +23,17 @@ ActiveRecord::Schema.define(version: 2021_06_19_215444) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "collection_posts", force: :cascade do |t|
+    t.integer "collection_id"
+    t.integer "post_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "collections", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "name"
+    t.string "name"
+    t.string "title"
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -37,15 +45,6 @@ ActiveRecord::Schema.define(version: 2021_06_19_215444) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "main_id"
     t.index ["main_id"], name: "index_ingredients_on_main_id"
-  end
-
-  create_table "ingredients_recipes", force: :cascade do |t|
-    t.integer "recipe_id"
-    t.integer "ingredient_id"
-    t.integer "amount"
-    t.string "measure"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "post_ingredients", force: :cascade do |t|
@@ -79,22 +78,10 @@ ActiveRecord::Schema.define(version: 2021_06_19_215444) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "number_of_servings"
+    t.integer "complexity"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
-  create_table "recipes", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
-    t.string "image"
-    t.integer "collection_id"
-    t.integer "category_id"
-    t.integer "complexity"
-    t.integer "cooking_time"
-    t.integer "number_of_servings"
-    t.string "recipe_text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -15,7 +15,7 @@ categories.each do |category|
 end
 
 ingredients = %w[
-  Помидоры-черри Сыр\ «Фета» Салат\ Микс Масло\ оливковое Специи 5\ крупных\ редисок 3\ больших\ куска\ черного\ хлеба\ с\ семечками Сливочное\ масло Авокадо Шпинат 
+  Помидоры-черри Сыр\ «Фета» Салат\ Микс Масло\ оливковое Специи 5\ крупных\ редисок 3\ больших\ куска\ черного\ хлеба\ с\ семечками Сливочное\ масло Авокадо Шпинат
   Томатный\ соус Сыр\ «Маасдам» Тесто\ для\ пиццы Бекон Мука/подсолнечное\ масло Индейка
   Сельдерей Кабачки Орехи\ кешью Соус\ терияки
 ]
@@ -32,7 +32,9 @@ posts = [
   image: File.open(Rails.root.join('public', 'images', 'dsh-salad-vegetables.png')),
 	time: "15 мин",
 	category_id: Category.pluck(:id)[2],
-  user_id: user.id
+  user_id: user.id,
+	complexity: "easy",
+	number_of_servings: 4
 	# ingredients: "
 	# Помидоры-черри — 150 г;
 	# Сыр «Фета» — 60 г;
@@ -47,7 +49,9 @@ posts = [
   image: File.open(Rails.root.join('public', 'images', 'dsh-snack-bruschetta.png')),
 	time: "10 мин",
 	category_id: Category.pluck(:id)[0],
-  user_id: user.id
+  user_id: user.id,
+	complexity: "easy",
+	number_of_servings: 4
 	# ingredients: "5 крупных редисок;
 	# 3 больших куска черного хлеба с семечками;
 	# Сливочное маслом — 100 г;
@@ -61,7 +65,9 @@ posts = [
   image: File.open(Rails.root.join('public', 'images', 'dsh-pizza.png')),
 	time: "30 мин",
 	category_id: Category.pluck(:id)[4],
-  user_id: user.id
+  user_id: user.id,
+	complexity: "easy",
+	number_of_servings: 4
 	# ingredients: "
 	# Томатный соус — 100 г;
 	# Сыр «Маасдам» — 150 г;
@@ -78,7 +84,9 @@ posts = [
   image: File.open(Rails.root.join('public', 'images', 'dsh-second-ragout.png')),
 	time: "35 мин",
 	category_id: Category.pluck(:id)[4],
-  user_id: user.id 
+  user_id: user.id,
+	complexity: "easy",
+	number_of_servings: 4
 	# ingredients: "
 	# Индейка — 200 г;
 	# Сельдерей — 1 шт;

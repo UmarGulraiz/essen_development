@@ -4,7 +4,7 @@ import A_TextBlock from './A_TextBlock'
 const M_Breadcrumbs = () => {
   return (
     <div>
-      <A_TextBlock text='Рецепт' />
+      <span onClick={() => window.history.back()}><A_TextBlock text='назад'/></span>
       <A_TextBlock text=' • BLAU' />
     </div>
   )

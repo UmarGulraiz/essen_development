@@ -15,21 +15,22 @@ import O_Footer from './O_Footer'
 import A_IconBookmark from './A_IconBookmark'
 
 
-const O_DescriptionRecipe = () => {
+const O_DescriptionRecipe = ({ recipe }) => {
+
   return (
     <>
       <div class="recipe-container">
         <M_Breadcrumbs />
         <div style={{display: "flex"}}>
-          <A_TextTitle title="kапpезе с тoфу" />
+          <A_TextTitle title={recipe.name} />
           <div style={ {alignSelf: "center"}}>
             <A_IconBookmark/>
           </div>
         </div>
-        <M_DescriptionRecipe />
-        <A_Photo icon={Plate} />
+        <M_DescriptionRecipe recipe={recipe} />
+        <A_Photo icon={recipe.image.url} />
         <div className= "description-body-recipe">
-          <A_TextBody text="Один из самых популярных десертов в мире — брауни был придуман в 1893 году на кухне легендарного отеля Palmer House"/>
+          <A_TextBody text={recipe.title}/>
         </div>
         <div className="author-block">
           <M_AuthorLinks
@@ -39,7 +40,7 @@ const O_DescriptionRecipe = () => {
           />
         </div>
         <div className="ingredients-block">
-          <O_Ingredients/>
+          <O_Ingredients recipe={recipe}/>
         </div>
         <div className="text-caption-block">
           <div className="recipe-title-two">
@@ -50,12 +51,12 @@ const O_DescriptionRecipe = () => {
           </div>
         </div>
         <div className="recipe-description-block">
-          <A_TextCaption name="Все овощи тщательно промойте" />
-          <br/>
-          <A_TextCaption name="проточной водой и нарежьте." />
+          <A_TextCaption name={recipe.content} />
+          {/* <br/>
+          <A_TextCaption name="проточной водой и нарежьте." /> */}
         </div>
 
-        <div className="recipe-description-block" style={{padding: "25px 0"}}>
+        {/* <div className="recipe-description-block" style={{padding: "25px 0"}}>
           <A_TextCaption name="Тофу нарежьте кубиками" />
           <br/>
           <A_TextCaption name="и смешайте нарезанные овощи" />
@@ -75,7 +76,7 @@ const O_DescriptionRecipe = () => {
         </div>
         <div>
           <img src={A_RecipeIconTwo} className="recipe-image-block" />
-        </div>
+        </div> */}
         <O_Like />
       </div>
       <O_Footer/>
