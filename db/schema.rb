@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_22_223543) do
+ActiveRecord::Schema.define(version: 2021_06_23_203512) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,13 @@ ActiveRecord::Schema.define(version: 2021_06_22_223543) do
     t.string "name"
     t.text "description"
     t.boolean "display_in_navbar", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "collection_posts", force: :cascade do |t|
+    t.integer "collection_id"
+    t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -71,7 +78,6 @@ ActiveRecord::Schema.define(version: 2021_06_22_223543) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "collection_id"
     t.integer "number_of_servings"
     t.integer "complexity"
     t.index ["category_id"], name: "index_posts_on_category_id"
