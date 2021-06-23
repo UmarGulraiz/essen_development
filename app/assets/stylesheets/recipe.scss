@@ -96,7 +96,9 @@
 
   .ingeredients-list-block {
     display: flex;
+    align-items: flex-start;
     padding: 8px 0;
+    justify-content: flex-start;
     .ingeredient-one, .ingeredient-two{
       font-family: Inter;
       text-transform: uppercase;
@@ -107,6 +109,8 @@
     }
     .ingeredient-one {
       margin-right: 10px;
+      max-width: 200px;
+      width: 100%;
     }
 
     .ingeredients-list-arrow {
