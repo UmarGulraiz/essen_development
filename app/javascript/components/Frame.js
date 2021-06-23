@@ -1,5 +1,5 @@
 import React from 'react'
-import Frame_M_Collection from './Frame_M_Collection'
+import M_Collection from './M_Collection'
 import Frame_1 from 'images/recipe_icons/frame_1.svg'
 import Frame_2 from 'images/recipe_icons/frame_2.svg'
 import Frame_3 from 'images/recipe_icons/frame_3.svg'
@@ -19,7 +19,7 @@ const Frame = (props) => {
 
   return (
     <div class="frame-container">
-      {collections.map((collection) => <Frame_M_Collection collection={collection} />)}
+      {collections.map((collection) => <M_Collection collection={collection} />)}
     </div>
   )
 }

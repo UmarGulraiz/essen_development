@@ -1,5 +1,6 @@
 .main-container {
   padding: 15px;
+  position: relative;
 
   .frame-container {
     overflow: auto;
@@ -9,6 +10,26 @@
       height: 220px;
       min-width: 160px;
       margin-right: 8px;
+      border-radius: 30px;
+      .frame-image-block {
+        width: 160px;
+        height: 220px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .collection-name {
+        font-weight: 500;
+        font-size: 18px;
+        font-weight: 600;
+        font-family: 'Inter';
+        color: #EFEFEF;
+        padding: 20px;
+        height: 100%;
+        width: 100%;
+        flex-wrap: wrap;
+        overflow-wrap: break-word;
+        white-space: pre-wrap;
+      }
     }
   }
 

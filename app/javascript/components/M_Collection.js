@@ -1,13 +1,11 @@
 import React from 'react'
-import A_TextBodyCards from './A_TextBodyCards'
 
-const M_Collection = ({ card }) => {
+const M_Collection = ({ collection }) => {
   return (
-    <div className="card-block" style={{ background: card.backgroundColor}}>
-      <div className="card-image-block">
-        <img src={card.image} className="card-image"/>
+    <div className="collection-frame">
+      <div className="frame-image-block" style={{backgroundImage: `url(${collection.image.url})`}}>
+        <div className="collection-name">{collection.name}</div>
       </div>
-      <A_TextBodyCards name={card.name} />
     </div>
   )
 }
