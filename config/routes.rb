@@ -24,9 +24,9 @@ Rails.application.routes.draw do
   end
 
   get 'homepage', to: 'main#index'
-  get 'recipe', to: 'recipies#index'
-  get 'all_collections', to: 'all_collections#index'
-  get 'collection', to: 'collection#index'
+  get 'recipes/:id', to: 'recipes#show'
+  get 'collections', to: 'collections#index'
+  get 'collections/:id', to: 'collections#show'
   get 'author', to: 'author#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

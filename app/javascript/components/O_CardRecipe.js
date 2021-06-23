@@ -8,13 +8,15 @@ import A_TextBodyCards from './A_TextBodyCards'
 
 const O_CardRecipe = (props) => {
   const { recipes } = props
-  const recipies = [1, 2, 3, 4, 5, 6];
+
+  const goToRecipe = (recipeId) => window.location.pathname = `/recipes/${recipeId}`
+
   return (
     <>
       {
         recipes.map((recipe) => {
           return (
-            <div class="main-card-container" style={{position: "relative"}}>
+            <div class="main-card-container" style={{position: "relative"}} onClick={() => goToRecipe(recipe.id)}>
             <div>
               <img class="recipe-image" src={recipe.image.url}></img>
             </div>
@@ -31,7 +33,7 @@ const O_CardRecipe = (props) => {
               </div>
               <M_TextAndIcon
                 icon={A_IconDifficulty}
-                text={recipe.title}
+                text={recipe.complexity}
               />
             </div>
           </div >

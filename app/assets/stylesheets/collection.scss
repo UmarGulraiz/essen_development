@@ -17,6 +17,10 @@
     border-radius: 30px;
     margin-bottom: 8px;
     .frame-image-block {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position-x: center;
+      background-position-y: center;
       width: 160px;
       height: 220px;
       object-fit: cover;

@@ -54,7 +54,7 @@ class Admin::CollectionsController < Admin::AdminController
 
     @collection.destroy
     respond_to do |format|
-      format.html { redirect_to admin_posts_url, notice: "Collection was successfully destroyed." }
+      format.html { redirect_to admin_collections_url, notice: "Collection was successfully destroyed." }
       format.json { head :no_content }
     end
   end
@@ -67,6 +67,6 @@ class Admin::CollectionsController < Admin::AdminController
 
     # Only allow a list of trusted parameters through.
     def collection_params
-      params.require(:collection).permit(:name, :image, post_ids: [])
+      params.require(:collection).permit(:name, :image, :title, post_ids: [])
     end
 end

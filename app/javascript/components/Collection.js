@@ -17,7 +17,7 @@ import M_Sort from './M_Sort'
 import O_CardRecipe from './O_CardRecipe'
 import Frame from './Frame'
 
-const Collection = () => {
+const Collection = ({ collection }) => {
   return (
     <>
       <div className="collection-container">
@@ -25,17 +25,16 @@ const Collection = () => {
           <M_Breadcrumbs />
         </div>
         <div className="collection-title">
-          <A_TextTitle title="Для веcелыx" />
-          <A_TextTitle title="вечeров"/>
+          <A_TextTitle title={collection.name} />
         </div>
         <div className="collection-description">
           <A_TextCaption name="Ресторан BLAU"/>
         </div>
         <div className="collection-description-block">
-          <A_TextCaption name="Вам пригодятся не только настольные игры, умная колонка и онлайн-кинотеатр, но и закуски к ним! Делимся 10 рецептами для веселых вечеров с друзьями."/>
+          <A_TextCaption name={collection.title}/>
         </div>
         <div>
-          <O_CardRecipe/>
+          <O_CardRecipe recipes={collection.posts}/>
         </div>
       </div>
       <O_Footer/>

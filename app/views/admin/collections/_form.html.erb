@@ -17,19 +17,16 @@
   </div>
 
   <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
     <%= f.label :image %>
     <%= f.file_field :image %>
   </div>
 
   <%= f.select :post_ids, Post.all.map{ |post| [post.name, post.id]},{}, { multiple: true} %>
-  <div id="posts">
-    <%= f.fields_for :posts do |post| %>
-      <%= render 'post_fields', f: post %>
-    <% end %>
-    <div class='links'>
-      <%= link_to_add_association 'Добавить ингредиент', f, :posts %>
-    </div>
-  </div>
 
   <div class="actions">
     <%= f.submit %>
