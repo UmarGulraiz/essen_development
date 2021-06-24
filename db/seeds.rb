@@ -101,6 +101,24 @@ posts.each do |post|
 	puts "Some magic just create a #{ postik.name } with id #{ postik.id }!"
 end
 
+food_categories = [
+	{
+		name: "omnivores",
+	},
+	{
+		name: 'vegetarians',
+	},
+	{
+		name: 'pescetarians',
+	},
+	{
+		name: 'vegans'
+	}
+]
+
+food_categories.each do |food_category|
+	FoodCategory.create!(food_category)
+end
 # AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
 
 # Post.create!(name: 'Индейка в соусе терияки', title: "Сытное горячее блюдо для холодных осенних дней", content: "Нарезать филе индейки небольшими кусочками. Хорошо разогреть сковородку с оливковым маслом. Кусочки индейки выложить в сковороду, перемешать, чтобы немного \«схватились\» корочкой. Затем огонь чуть уменьшить. Далее добавить в сковороду с индейкой нарезанные полукольцами лук и болгарский перец, выдавить чеснок и влить соус терияки (можно заменить на соевый, но вкус будет отличаться). Готовить минут 20. После добавить в сковороду мед, и когда он «расплавится», всыпать кунжутные семечки, перемешать.", user_id: 10, category_id: 40, post_ingredients_attributes: [{ amount: 200, measure: 'г' }, { amount: 1, measure: 'шт' }], ingredients_attributes: [{ingredient: 'Индейка' }, {ingredient: 'Сельдерей'}] )
