@@ -121,11 +121,17 @@
     }
 
     .ingeredient-with-list {
-      font-family: Inter;
-      font-weight: 500;
-      font-size: 23px;
+      width: 100px;
+      padding: 10px;
       color: #6C6BCF;
+      font-family: 'Inter';
+      font-size: 23px;
+      font-weight: 500;
+      border: none;
       background: transparent;
+      .ingredient-options {
+        font-size: 16px;
+      }
     }
   }
 

@@ -41,7 +41,7 @@
     <%= f.text_field :food_categories %>
   </div>
   <% FoodCategory.all.each do |food_category| %>
-      <%= f.check_box :food_category_ids, { multiple: true, include_hidden: false}, food_category.idpp %>
+      <%= f.check_box :food_category_ids, { multiple: true, include_hidden: false}, food_category.id %>
         <label>
           <%= food_category.name%>
         </label>

@@ -15,7 +15,7 @@ import O_Footer from './O_Footer'
 import A_IconBookmark from './A_IconBookmark'
 
 
-const O_DescriptionRecipe = ({ recipe }) => {
+const O_DescriptionRecipe = ({ recipe, ingredients }) => {
 
   return (
     <>
@@ -40,7 +40,7 @@ const O_DescriptionRecipe = ({ recipe }) => {
           />
         </div>
         <div className="ingredients-block">
-          <O_Ingredients recipe={recipe}/>
+          <O_Ingredients recipe={recipe} ingredients={ingredients}/>
         </div>
         <div className="text-caption-block">
           <div className="recipe-title-two">
